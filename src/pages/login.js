@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { useRouter } from "next/router";
 
 const Login = () => {
@@ -27,22 +27,24 @@ const Login = () => {
 
   // Show the user. No loading state is required
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input
-        {...register("email", {
-          required: "Veuillez entrer votre adresse mail",
-        })}
-        type="email"
-        placeholder="ex. jean.deflo@bluewin.ch"
-      />
-      <input
-        {...register("password", { required: "Il vous faut un mot de passe" })}
-        type="password"
-        placeholder="mot de passe"
-      />
-      <p>{data}</p>
-      <input type="submit" />
-    </form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+
+        <h1>Login</h1>
+        <input
+          {...register("email", {
+            required: "Veuillez entrer votre adresse mail",
+          })}
+          type="email"
+          placeholder="ex. jean.deflo@bluewin.ch"
+        />
+        <input
+          {...register("password", { required: "Il vous faut un mot de passe" })}
+          type="password"
+          placeholder="mot de passe"
+        />
+        <p>{data}</p>
+        <input type="submit" />
+      </form>
   );
 };
 

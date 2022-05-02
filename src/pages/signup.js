@@ -25,6 +25,7 @@ const Signup = () => {
   // Show the user. No loading state is required
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <h1>Signup</h1>
       <input {...register("name")} placeholder="ex. Jean De Florette" />
       <input
         {...register("email", {
