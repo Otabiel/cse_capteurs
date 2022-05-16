@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useRouter } from "next/router";
 
+
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const [data, setData] = useState();
@@ -19,7 +20,7 @@ const Login = () => {
       });
       const json = await res.json();
       localStorage.setItem("token", json.token);
-      // router.push('/sensors');
+      router.push('/sensors');
     } catch (e) {
       console.log(e);
     }

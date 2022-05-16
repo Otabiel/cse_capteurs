@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import React from 'react';
-import "../styles/sign_in_up.css";
+import 'bootstrap/dist/css/bootstrap.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
