@@ -8,16 +8,13 @@ import Footer from "../components/Footer";
 
 const Index = () => {
   return (
-    <Layout pageTitle="Landing Page Nextjs">
+    <Layout pageTitle="Welcome">
       <Header />
       <Hero />
-
       <Feature/>
-
       <Service />
       <About />
       <Footer />
-
     </Layout>
   )
 }

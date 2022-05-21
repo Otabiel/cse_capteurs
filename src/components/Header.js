@@ -1,4 +1,6 @@
-import NavBar from "./Navbar";
+import { useRouter } from "next/router";
+import useSession from '../hooks/auth'
+import Link from 'next/link'
 
 import React, { useState, useEffect } from 'react';
 import {
@@ -16,6 +18,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  const { session, loading } = useSession();
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -31,7 +34,7 @@ const Header = () => {
 
   return (
     <div className={`header${sticky ? ' sticky' : ''}`}>
-      <Navbar light expand="md">
+      <Navbar light expand="lg">
         <Container>
           <NavbarBrand href="/">LOGO</NavbarBrand>
           <NavbarToggler onClick={toggle} />
@@ -49,6 +52,22 @@ const Header = () => {
               <NavItem>
                 <NavLink href="#about">About</NavLink>
               </NavItem>
+              {!session ? (
+                <NavItem>
+                  <NavLink href="/signup">Sign up</NavLink>
+                </NavItem>
+              ) : (
+                <p></p>
+              )}
+              {!session ? (
+                <NavItem>
+                  <NavLink href="/login">Login</NavLink>
+                </NavItem>
+              ) : (
+                <NavItem>
+                  <NavLink href="/">Logout</NavLink>
+                </NavItem>
+              )}
             </Nav>
           </Collapse>
         </Container>
