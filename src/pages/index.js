@@ -1,12 +1,24 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
-import { useRouter } from "next/router";
-import Layout from '../components/Layout';
+import Layout from "../components/Layout";
+import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Feature from "../components/Feature";
+import Service from "../components/Service";
+import About from "../components/About";
+import Footer from "../components/Footer";
 
-export default function Home() {
+const Index = () => {
   return (
-    <Layout>
+    <Layout pageTitle="Landing Page Nextjs">
+      <Header />
+      <Hero />
+
+      <Feature/>
+
+      <Service />
+      <About />
+      <Footer />
+
     </Layout>
   )
 }
+export default Index;
