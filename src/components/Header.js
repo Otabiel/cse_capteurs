@@ -36,7 +36,9 @@ const Header = () => {
     <div className={`header${sticky ? ' sticky' : ''}`}>
       <Navbar light expand="lg">
         <Container>
-          <NavbarBrand href="/">LOGO</NavbarBrand>
+          <NavbarBrand href="/">
+            <img src="/Logo.png" alt="" className="img-fluid mx-auto d-block"/>
+          </NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="m-auto" navbar>
@@ -57,7 +59,7 @@ const Header = () => {
                   <NavLink href="/signup">Sign up</NavLink>
                 </NavItem>
               ) : (
-                <p></p>
+                <a></a>
               )}
               {!session ? (
                 <NavItem>

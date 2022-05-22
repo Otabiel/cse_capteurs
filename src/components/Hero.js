@@ -19,7 +19,7 @@ const Hero = () => {
           </Col>
           <Col lg={6}>
             <div className="mt-5 mt-lg-0">
-              <img src="/Hero.png" alt="" className="img-fluid mx-auto d-block"/>
+              <img src="/Hero.jpeg" alt="" className="img-fluid mx-auto d-block"/>
             </div>
          </Col>
         </Row>

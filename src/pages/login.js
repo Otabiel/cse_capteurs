@@ -23,7 +23,7 @@ const Login = () => {
       });
       const json = await res.json();
       localStorage.setItem("token", json.token);
-      router.push('/sensors');
+      router.push('/profile');
     } catch (e) {
       console.log(e);
     }
@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <Layout pageTitle="Welcome">
       <Header/>
-      
+
       <section className="section position-relative">
         <Container>
           <form onSubmit={handleSubmit(onSubmit)}>
