@@ -23,6 +23,11 @@ model Sensor {
   id       String     @id @default(uuid())
   owner    User @relation(fields: [ownerId], references: [id])
   ownerId  String // relation scalar field  (used in the `@relation` attribute above)
-  name     String
-  data     Int
+  dev_id   String
+  nitrate  Int
+  phos     Int
+  potass   Int
+  co2      Int
+  temp     Int
+  humidity Int
 }
