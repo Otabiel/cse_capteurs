@@ -9,6 +9,7 @@ class SensorHandler {
   @Get()
   async listSensors() {
     const sensors = await prisma.sensor.findMany();
+    return sensors;
   }
 
   @Post()

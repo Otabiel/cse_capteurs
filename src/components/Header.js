@@ -59,7 +59,9 @@ const Header = () => {
                   <NavLink href="/signup">Sign up</NavLink>
                 </NavItem>
               ) : (
-                <a></a>
+                <NavItem>
+                  <NavLink href="/profile">Profile</NavLink>
+                </NavItem>
               )}
               {!session ? (
                 <NavItem>
