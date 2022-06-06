@@ -24,7 +24,9 @@
     "react-bootstrap": "^2.4.0",
     "react-dom": "18.0.0",
     "react-hook-form": "^7.29.0",
+    "react-jwt": "^1.1.6",
     "react-mapbox-gl": "^5.1.1",
+    "react-mosaic-component": "^5.1.0",
     "react-openlayers": "^0.3.0",
     "reactstrap": "^9.0.2"
   },
