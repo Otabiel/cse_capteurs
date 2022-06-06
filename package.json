@@ -25,6 +25,7 @@
     "react-dom": "18.0.0",
     "react-hook-form": "^7.29.0",
     "react-mapbox-gl": "^5.1.1",
+    "react-openlayers": "^0.3.0",
     "reactstrap": "^9.0.2"
   },
   "devDependencies": {

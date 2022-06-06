@@ -24,10 +24,20 @@ model Sensor {
   owner    User @relation(fields: [ownerId], references: [id])
   ownerId  String // relation scalar field  (used in the `@relation` attribute above)
   dev_id   String
-  nitrate  Int
-  phos     Int
-  potass   Int
-  co2      Int
-  temp     Int
-  humidity Int
+  lati     Float
+  temp_in  Float
+  cond     Float
+  nitrate  Float
+  potass   Float
+  phosph   Float
+  temp_out Float
+  longi    Float
+  humi_in  Float
+  ph       Float
+  sel      Float
+  humi_out Float
+  gaz_1    Float
+  gaz_2    Float
+  gaz_3    Float
+  gaz_4    Float
 }

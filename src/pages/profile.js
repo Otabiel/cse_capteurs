@@ -10,6 +10,21 @@ import MapOpenLayer from "../components/OpenLayers";
 
 const Sensors = () => {
   const { session, loading } = useSession();
+  const [ data, setData ] = useState();
+
+  const onLoad = async () => {
+    const res = await fetch("/api/sensors/index", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    setData(res);
+    console.log(res);
+  };
+
+
+
   return !session && !loading ?
   <div>Login Required</div>
   :
@@ -21,7 +36,8 @@ const Sensors = () => {
 
       <SensorTable/>
       <AddSensor/>
-      
+      <MapOpenLayer/>
+
     </Container>
 
   </Layout>
