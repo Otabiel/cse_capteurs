@@ -16,16 +16,21 @@ const AddSensor = () => {
       obj.dev_id  = data.dev_id;
       obj.ownerId = decodeToken(localStorage.getItem("token")).sub;
 
-      console.log(JSON.stringify(obj));
+      const token = localStorage.getItem("token");
+      // console.log(JSON.stringify(obj));
 
       const res = await fetch("/api/data/sensor_data", {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
       });
+
       const json = await res.json();
+
+      setShow(false);
 
     } catch (e) {
       console.log(e);

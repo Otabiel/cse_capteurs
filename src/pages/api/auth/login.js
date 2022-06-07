@@ -32,7 +32,8 @@ class LoginHandler {
         email: user.email,
       },
       secret,
-      { subject: user.id }
+      { subject: user.id },
+      { expiresIn: '365d'}
     );
 
     return { token };

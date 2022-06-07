@@ -9,6 +9,7 @@ const prisma = new PrismaClient();
 class SensorHandler {
   @Get()
   async getSensor(@Request() req) {
+
     const sensors = await prisma.sensor.findMany({
       where: {
         ownerId: req.user.sub,
@@ -19,11 +20,19 @@ class SensorHandler {
   }
 
   @Post()
-  async signup(@Body() body) {
-    const newSensor = await prisma.sensor.create({
+  async addSensor(@Body() body) {
+    console.log(body);
+
+    const newSensor = await prisma.user.update({
+      where: {
+        id: body.ownerId
+      },
       data:{
-        dev_id: body.dev_id,
-        ownerId: body.ownerId,
+        sensors:{
+          create: {
+            dev_id: body.dev_id
+          },
+        },
       },
     });
     return newSensor;

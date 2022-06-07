@@ -5,30 +5,34 @@ import Header from "../components/Header";
 import { Container} from "react-bootstrap";
 import SensorTable from "../components/SensorTable";
 import AddSensor from "../components/AddSensorModal";
-import Script from "next/script";
-// const prisma = new PrismaClient();
+
+import Footer from "../components/Footer";
 
 
 const Sensors = () => {
   const { session, loading } = useSession();
 
-  return !session && !loading ?
-  <div>Login Required</div>
-  :
-  <Layout>
-    <Header/>
+  console.log(session);
 
-    <Container>
-      <h1 className="mb-4 font-weight-normal line-height-1_4">Fdp</h1>
-      <h2 className="mb-4 font-weight-normal line-height-1_4">My sensors</h2>
+  if (loading) return <p>Loading...</p>
 
-      <SensorTable/>
-      <AddSensor/>
+  if (!session) return <p>Login Required to continue</p>
 
-    </Container>
+  return (
+    <Layout>
+      <Header/>
 
-  </Layout>
+      <Container>
+        <h1 className="mb-4 font-weight-normal line-height-1_4">{session.name}</h1>
+        <h2 className="mb-4 font-weight-normal line-height-1_4">My sensors</h2>
 
+        <SensorTable/>
+        <AddSensor/>
+
+      </Container>
+      <Footer/>
+    </Layout>
+  );
 };
 
 export default Sensors;
