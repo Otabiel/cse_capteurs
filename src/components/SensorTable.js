@@ -59,12 +59,12 @@ const SensorTable = () => {
 
   return (
     <div className="mb-4">
-      <h3>Gases</h3>
+      <h3>Gazs</h3>
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
-            <th>Device</th>
+            <th>Capteur</th>
             <th>No2</th>
             <th>Alcool</th>
             <th>VOC</th>
@@ -75,34 +75,34 @@ const SensorTable = () => {
           {data_1}
         </tbody>
       </Table>
-      <h3>In ground</h3>
+      <h3>Sous terre</h3>
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
-            <th>Device</th>
-            <th>Humidity</th>
-            <th>Temperature</th>
-            <th>Conductiviy</th>
+            <th>Capteur</th>
+            <th>Humidité</th>
+            <th>Température</th>
+            <th>Conductivité</th>
             <th>Nitrate</th>
             <th>PH</th>
             <th>Phosphore</th>
             <th>Potassium</th>
-            <th>Salt</th>
+            <th>Sel</th>
           </tr>
         </thead>
         <tbody>
           {data_3}
         </tbody>
       </Table>
-      <h3>Outside</h3>
+      <h3>Extérieur</h3>
       <Table striped bordered hover>
         <thead>
           <tr>
             <th>#</th>
-            <th>Device</th>
-            <th>Humidity</th>
-            <th>Temperature</th>
+            <th>Capteur</th>
+            <th>Humidité</th>
+            <th>Température</th>
           </tr>
         </thead>
         <tbody>
@@ -114,7 +114,7 @@ const SensorTable = () => {
         <thead>
           <tr>
             <th>#</th>
-            <th>Device</th>
+            <th>Capteur</th>
             <th>Longitude</th>
             <th>Lattitude</th>
           </tr>

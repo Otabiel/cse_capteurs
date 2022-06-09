@@ -20,6 +20,15 @@ const Header = () => {
   const toggle = () => setIsOpen(!isOpen);
   const { session, loading } = useSession();
 
+  const handleOnClick = async (data) => {
+    try {
+      console.log("Bouffon");
+      localStorage.removeItem("token");
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
   });
@@ -43,20 +52,17 @@ const Header = () => {
           <Collapse isOpen={isOpen} navbar>
             <Nav className="m-auto" navbar>
               <NavItem>
-                <NavLink href="/">Home</NavLink>
+                <NavLink href="/">Accueil</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#feature">Features</NavLink>
+                <NavLink href="#feature">Capteurs</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#service">Services</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="#about">About</NavLink>
-              </NavItem>
               {!session ? (
                 <NavItem>
-                  <NavLink href="/signup">Sign up</NavLink>
+                  <NavLink href="/signup">S&#39;enregistrer</NavLink>
                 </NavItem>
               ) : (
                 <NavItem>
@@ -65,11 +71,11 @@ const Header = () => {
               )}
               {!session ? (
                 <NavItem>
-                  <NavLink href="/login">Login</NavLink>
+                  <NavLink href="/login">S&#39;identifier</NavLink>
                 </NavItem>
               ) : (
                 <NavItem>
-                  <NavLink href="/">Logout</NavLink>
+                  <NavLink href="/"><span onClick={handleOnClick} className="text-danger">Se déconnecter</span></NavLink>
                 </NavItem>
               )}
             </Nav>

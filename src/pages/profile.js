@@ -2,9 +2,10 @@ import useSession from '../hooks/auth'
 import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import Header from "../components/Header";
-import { Container} from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import SensorTable from "../components/SensorTable";
 import AddSensor from "../components/AddSensorModal";
+import DelSensor from "../components/DelSensorModal";
 
 import Footer from "../components/Footer";
 
@@ -24,10 +25,15 @@ const Sensors = () => {
 
       <Container>
         <h1 className="mb-4 font-weight-normal line-height-1_4">{session.name}</h1>
-        <h2 className="mb-4 font-weight-normal line-height-1_4">My sensors</h2>
+        <h2 className="mb-4 font-weight-normal line-height-1_4">Mes Capteurs</h2>
 
         <SensorTable/>
-        <AddSensor/>
+        <Container>
+          <Row>
+            <AddSensor/>
+            <DelSensor/>
+          </Row>
+        </Container>
 
       </Container>
       <Footer/>

@@ -1,9 +1,8 @@
 import Layout from "../components/Layout";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import Feature from "../components/Feature";
+import Sensors from "../components/Sensors";
 import Service from "../components/Service";
-import About from "../components/About";
 import Footer from "../components/Footer";
 
 const Index = () => {
@@ -11,9 +10,8 @@ const Index = () => {
     <Layout pageTitle="Welcome">
       <Header />
       <Hero />
-      <Feature/>
+      <Sensors/>
       <Service />
-      <About />
       <Footer />
     </Layout>
   )

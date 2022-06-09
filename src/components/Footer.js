@@ -2,34 +2,21 @@ import React from 'react';
 import { Container, Row, Col } from "reactstrap";
 const Footer = () => {
   const links = [
-    { id : 1, title : "Feature",
+    { id : 1, title : "Capteurs",
       child : [
-          { title : "LOREM IPSUM", link : "/" },
-          { title : "LOREM IPSUM", link : "/" },
-          { title : "LOREM IPSUM", link : "/" },
-          { title : "LOREM IPSUM", link : "/" }
-      ]
-    },
-    { id : 2, title : "About Us",
-      child : [
-          { title : "Contact Us", link : "/" },
-          { title : "FAQs", link : "/" },
-          { title : "Privacy Policy", link : "/" },
+          { title : "NPK Capteurs", link : "/" },
+          { title : "Capteur Co2", link : "/" },
+          { title : "Capteur Température-Humidité", link : "/" },
+          { title : "Récepteur GPS", link : "/" }
       ]
     },
   ];
 
   return (
-    <section className="footer section">
+    <section className="footer section bg-light">
       <Container>
         <Row>
-          <Col lg={4}>
-              <div className="mb-4">
-                <p className="text-muted mt-4 mb-2">email@email.com</p>
-                <h6 className="text-muted font-weight-normal">+99 1234-5678-9</h6>
-              </div>
-          </Col>
-          <Col lg={8}>
+          <Col lg={12}>
             <Row>
               {
                 links.map((link, key) =>
@@ -45,16 +32,18 @@ const Footer = () => {
                   </Col>
                 )
               }
+              <Col md={4}>
+                <h6 className="text-dark mb-3">Participants</h6>
+                <h6 className="text-muted pb-2">Da Rocha Carvalho Bruno</h6>
+                <h6 className="text-muted pb-2">Mercier Lucas</h6>
+                <h6 className="text-muted pb-2">Pruvot Lucien</h6>
+              </Col>
 
               <Col md={4}>
-                <h6 className="text-dark mb-3">Our Address</h6>
-                <p className="text-muted f-14">1234 Lorem Ipsum dummy text, 12345</p>
-                <h6 className="text-muted pb-2">Email: email@email.com</h6>
-                <ul className="list-unstyled footer-social-list mt-4">
-                  <li className="list-inline-item"><a href="#"><i className="mdi mdi-facebook"></i></a></li>
-                  <li className="list-inline-item"><a href="#"><i className="mdi mdi-instagram"></i></a></li>
-                  <li className="list-inline-item"><a href="#"><i className="mdi mdi-linkedin"></i></a></li>
-                </ul>
+                <h6 className="text-dark mb-3">Adresse</h6>
+                <p className="text-muted f-14">HEIG-VD</p>
+                <h6 className="text-muted pb-2">Route de Cheseaux 1</h6>
+                <h6 className="text-muted pb-2">CH-1400, Yverdon-les-bains</h6>
               </Col>
             </Row>
           </Col>
@@ -62,7 +51,7 @@ const Footer = () => {
 <Row className="mt-5">
           <Col md={12}>
             <div className="text-center text-muted">
-              <p className="mb-0 f-15">2020 © Name. Design by Name</p>
+              <p className="mb-0 f-15">2022 © Club Capteurs. Design by Bruno Da Rocha Carvalho</p>
             </div>
           </Col>
         </Row>

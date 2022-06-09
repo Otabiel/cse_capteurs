@@ -4,7 +4,7 @@ import { isExpired, decodeToken } from "react-jwt";
 import { useForm } from "react-hook-form";
 import { Col } from "reactstrap";
 
-const AddSensor = () => {
+const DelSensor = () => {
   const { register, handleSubmit } = useForm();
   const [show, setShow] = useState(false);
 
@@ -15,12 +15,11 @@ const AddSensor = () => {
     try {
       var obj = {};
       obj.dev_id  = data.dev_id;
-      obj.ownerId = decodeToken(localStorage.getItem("token")).sub;
-
       const token = localStorage.getItem("token");
-      // console.log(JSON.stringify(obj));
 
-      const res = await fetch("/api/data/sensor_data", {
+      console.log(obj);
+
+      const res = await fetch("/api/data/remove_sensor", {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {
@@ -40,9 +39,9 @@ const AddSensor = () => {
 
   return (
     <Col lg={2}>
-    <div>
-      <Button variant="primary" onClick={handleShow}>
-        Ajout capteur
+      <div>
+      <Button variant="danger" onClick={handleShow}>
+        Supprimer capteur
       </Button>
 
       <Modal
@@ -52,7 +51,7 @@ const AddSensor = () => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Formulaire d&#39;ajout de capteur</Modal.Title>
+          <Modal.Title>Formulaire de suppression de capteur</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <form>
@@ -68,11 +67,11 @@ const AddSensor = () => {
           <Button variant="secondary" onClick={handleClose}>
             Annuler
           </Button>
-          <Button variant="primary" onClick={handleSubmit(onSubmit)}>Envoyer</Button>
+          <Button variant="danger" onClick={handleSubmit(onSubmit)}>Supprimer</Button>
         </Modal.Footer>
       </Modal>
       </div>
     </Col>
   );
 }
-export default AddSensor;
+export default DelSensor;

@@ -38,7 +38,7 @@ const Login = () => {
         <Container>
           <form onSubmit={handleSubmit(onSubmit)}>
 
-            <h1 className="mb-4 font-weight-normal line-height-1_4">Login</h1>
+            <h1 className="mb-4 font-weight-normal line-height-1_4">S&#39;identifier</h1>
             <input
               {...register("email", {
                 required: "Veuillez entrer votre adresse mail",
