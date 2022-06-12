@@ -37,6 +37,7 @@ const Footer = () => {
                 <h6 className="text-muted pb-2">Da Rocha Carvalho Bruno</h6>
                 <h6 className="text-muted pb-2">Mercier Lucas</h6>
                 <h6 className="text-muted pb-2">Pruvot Lucien</h6>
+                <h6 className="text-muted pb-2">Zeder Marion (Illustration)</h6>
               </Col>
 
               <Col md={4}>

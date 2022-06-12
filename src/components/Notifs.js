@@ -88,7 +88,7 @@ const SensorTable = () => {
     <Container className="mt-4">
       <Row>
         <Col>
-          <h3>Les notifications sont {data ? (<span>activé</span>) : (<span>désactivé</span>)} </h3>
+          <h3>Les notifications sont {data ? (<span>activées</span>) : (<span>désactivées</span>)} </h3>
         </Col>
         <Col>
           {data ? (<Button variant="danger" onClick={onClickDis}>Désactiver</Button>) : (<Button variant="success" onClick={onClickEn}>Activer</Button>)}

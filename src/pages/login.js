@@ -31,7 +31,7 @@ const Login = () => {
 
   // Show the user. No loading state is required
   return (
-    <Layout pageTitle="Welcome">
+    <Layout pageTitle="Login">
       <Header/>
 
       <section className="section position-relative">

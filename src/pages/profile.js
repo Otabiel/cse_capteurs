@@ -19,7 +19,7 @@ const Sensors = () => {
   if (!session) return <p>Login Required to continue</p>
 
   return (
-    <Layout>
+    <Layout pageTitle="Login">
       <Header/>
 
       <Container>

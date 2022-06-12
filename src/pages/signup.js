@@ -28,7 +28,7 @@ const Signup = () => {
   // Show the user. No loading state is required
   return (
 
-    <Layout pageTitle="Welcome">
+    <Layout pageTitle="Sign up">
       <Header/>
         <Container>
         <section className="section position-relative">

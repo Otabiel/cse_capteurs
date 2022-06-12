@@ -1,0 +1,401 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1654d82c8801f13d",
+        "type": "mqtt-broker",
+        "name": "CSE",
+        "broker": "",
+        "port": "8883",
+        "tls": "",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e680a446b13df9cd",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b456c1f8b6a88731",
+        "type": "ui_group",
+        "name": "DATA",
+        "tab": "e680a446b13df9cd",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "8cbdb399f1267d4d",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b0c928cb26cec4b0",
+        "type": "postgreSQLConfig",
+        "name": "CSE_DB",
+        "host": "",
+        "hostFieldType": "str",
+        "port": "5432",
+        "portFieldType": "num",
+        "database": "",
+        "databaseFieldType": "str",
+        "ssl": "true",
+        "sslFieldType": "bool",
+        "applicationName": "",
+        "applicationNameType": "str",
+        "max": "10",
+        "maxFieldType": "num",
+        "idle": "1000",
+        "idleFieldType": "num",
+        "connectionTimeout": "10000",
+        "connectionTimeoutFieldType": "num",
+        "user": "",
+        "userFieldType": "str",
+        "password": "",
+        "passwordFieldType": "str"
+    },
+    {
+        "id": "09474bdbba372be1",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "1654d82c8801f13d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 260,
+        "y": 60,
+        "wires": [
+            [
+                "2c963d91d356a7e8",
+                "372251683971628d"
+            ]
+        ]
+    },
+    {
+        "id": "372251683971628d",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "msg.payload = msg.payload.payloads_ul_early.dataFrame;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 620,
+        "y": 220,
+        "wires": [
+            [
+                "35881a2f41bc2b30"
+            ]
+        ]
+    },
+    {
+        "id": "2c963d91d356a7e8",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "msg.payload = msg.payload.payloads_ul_early.deveui;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 320,
+        "wires": [
+            [
+                "285f346ef86a9f44",
+                "5a06fb155be6e843"
+            ]
+        ]
+    },
+    {
+        "id": "1504464ef0715175",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "var input = msg.payload.split(\"--\");\n\nvar id    = input[0];\nvar left  = input[1].split(\"_\");\nvar right = input[2].split(\"_\");\n\nvar nameL = left[0];\nvar nameR = right[0];\n\nmsg.payload = \"UPDATE \\\"Sensor\\\"\\n\";\n\nif (nameL == \"GPSLAT\") {\n    msg.payload += \"SET lati='\"+left[1]+\"',\\n\";\n} else if (nameL == \"NPKTEM\") {\n    msg.payload += \"SET temp_in='\"+left[1]+\"',\\n\";\n} else if (nameL == \"NPKCON\"){\n    msg.payload += \"SET cond='\"+left[1]+\"',\\n\";\n} else if (nameL == \"NPKNIT\"){\n    msg.payload += \"SET nitrate='\"+left[1]+\"',\\n\";\n} else if (nameL == \"NPKPOT\"){\n    msg.payload += \"SET potass='\"+left[1]+\"',\\n\";\n} else if (nameL == \"SHTTEM\"){\n    msg.payload += \"SET temp_out='\"+left[1]+\"',\\n\";\n} else if (nameL == \"GAZNO2\") {\n    msg.payload += \"SET no2='\"+left[1]+\"',\\n\";\n} else if (nameL == \"GAZVOC\") {\n    msg.payload += \"SET voc='\"+left[1]+\"',\\n\";\n}\n\nif (nameR == \"GPSLONG\") {\n    msg.payload += \"longi='\"+right[1]+\"'\\n\";\n} else if (nameR == \"NPKHUM\") {\n    msg.payload += \"humi_in='\"+right[1]+\"'\\n\";\n} else if (nameR == \"NPKPH\"){\n    msg.payload += \"ph='\"+right[1]+\"'\\n\";\n} else if (nameR == \"NPKPHO\"){\n    msg.payload += \"phosph='\"+right[1]+\"'\\n\";\n} else if (nameR == \"NPKSAL\"){\n    msg.payload += \"sel='\"+right[1]+\"'\\n\";\n} else if (nameR == \"SHTHUM\"){\n    msg.payload += \"humi_out='\"+right[1]+\"'\\n\";\n} else if (nameR == \"GAZALCO\") {\n    msg.payload += \"alcool='\"+right[1]+\"'\\n\";\n} else if (nameR == \"GAZCO\") {\n    msg.payload += \"co='\"+right[1]+\"'\\n\";\n}\n\nmsg.payload += \"WHERE \\\"dev_id\\\"='\"+id+\"';\"\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1100,
+        "y": 320,
+        "wires": [
+            [
+                "1e7bcb90b7d93817",
+                "a4ad53e627970f59"
+            ]
+        ]
+    },
+    {
+        "id": "35881a2f41bc2b30",
+        "type": "base64",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "action": "b64",
+        "property": "payload",
+        "x": 780,
+        "y": 220,
+        "wires": [
+            [
+                "285f346ef86a9f44"
+            ]
+        ]
+    },
+    {
+        "id": "285f346ef86a9f44",
+        "type": "join",
+        "z": "f6f2187d.f17ca8",
+        "name": "Test",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "payload",
+        "joiner": "--",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 970,
+        "y": 320,
+        "wires": [
+            [
+                "1504464ef0715175"
+            ]
+        ]
+    },
+    {
+        "id": "4912a1e18c250ccf",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "var temp = msg.payload[0].email;\n\nif (msg.payload[0].notifs == true) {\n    \n    if (msg.payload[0].temp_out >= 20.0){\n        msg = {\n            payload : \"Temp alarm has been triggered ! \" + Date().toString(),\n            topic: \"High temp alarm\",\n            to : temp,\n            from : \"your_sensor@noreply.com\"\n        };\n        return msg;\n    }\n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 500,
+        "wires": [
+            [
+                "dc94b5a6084955f9"
+            ]
+        ]
+    },
+    {
+        "id": "78345f39d802be5f",
+        "type": "postgresql",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "query": "{{{ msg.payload }}};",
+        "postgreSQLConfig": "b0c928cb26cec4b0",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 490,
+        "y": 500,
+        "wires": [
+            [
+                "4912a1e18c250ccf"
+            ]
+        ]
+    },
+    {
+        "id": "5a06fb155be6e843",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "func": "var tmp = msg.payload;\n\nmsg.payload  = \"SELECT * FROM \\\"Sensor\\\"\\n\";\nmsg.payload += \"INNER JOIN \\\"User\\\" ON \\\"ownerId\\\" = \\\"User\\\".\\\"id\\\"\\n\";\nmsg.payload += \"WHERE \\\"Sensor\\\".\\\"dev_id\\\" = '\"+tmp+\"';\\n\";\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 500,
+        "wires": [
+            [
+                "78345f39d802be5f"
+            ]
+        ]
+    },
+    {
+        "id": "dc94b5a6084955f9",
+        "type": "e-mail",
+        "z": "f6f2187d.f17ca8",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "secure": true,
+        "tls": false,
+        "name": "",
+        "dname": "email notification",
+        "x": 1070,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a4ad53e627970f59",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 930,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "1e7bcb90b7d93817",
+        "type": "postgresql",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "query": "{{{ msg.payload }}};",
+        "postgreSQLConfig": "b0c928cb26cec4b0",
+        "split": false,
+        "rowsPerMsg": 1,
+        "outputs": 1,
+        "x": 1250,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    }
+]

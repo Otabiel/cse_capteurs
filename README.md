@@ -1,8 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projet CSE 2022
+Auteurs : Da Rocha Carvalho Bruno, Merci Lucas, Pruvot Lucas
 
-## Getting Started
+## Préparation
 
-First, run the development server:
+### Base de donnée
+
+Pour ce projet Prisma a été utilisé. C'est un "mapping objet-relationnel" open-source qui simplifie drastiquement la modélisation de donnée, leurs migrations et l'accès  au données pour des base de donnée SQL en Node.js. 
+> Installation
+
+```bash
+npm install prisma 
+OR	
+yarn add prisma
+```
+
+Ensuite pour pouvoir utilisé l'implémentation il faut aller inscrire dans le fichier `.env` à la racine du projet, l'adresse de votre base de donnée telle que : 
+
+```
+DATABASE_URL="postgres://user:password@host:port/db_name"
+SHADOW_DATABASE_URL="postgres://user:password@host:port/db_name"
+```
+
+Dans ce même fichier il faut également mettre votre clé d'encryption pour les tokens json utilisé dans ce projet. Vous pouvez garder la même ou mettre n'importe quel autre clé vous allant.
+
+### Node-Red
+
+Il s'agit d'un outil de programmation pour relier des périphériques, des APIs et des services en ligne. Cela permet de faire ça simplement sur une interface web.
+
+> Installation
+
+```bash
+npm install node-red
+OR 
+yarn add node-red
+```
+
+Une fois l'installation faîtes vous aurez dans `/home/your_profile/.node-red/flows.json` la description de votre design node-red. Vous pouvez donc copier celle présente dans `flow_node_red/flow.json` pour la remplacer.
+
+Néanmoin il faudra ajouter quelques configuration pour que le projet node-red puisse fonctionner : 
+![Node-red](img_readme/Node-red.png)
+
+- Dans l'encadré bleu, il faut aller renseigner les informations du topics mqtt
+- Dans les encadrés vert, il faut aller renseigner les informations de votre base de données
+
+Une fois cela fait simplement appuyer sur le bouton `deploy` et votre application node-red s'exécute et mettra a jour votre base de données.
+
+### Site web
+
+*Prérequis : avoir node.js d'installé*
 
 ```bash
 npm run dev
@@ -10,25 +55,50 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Infrastructure
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Base de donnée
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+La description de la base de donnée se trouve dans `prisma/schema.prisma`.
+Si vous décidé de la modifier, une fois vos modification faîtes il faudra lancer la commande : 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+npx prisma db push
+```
 
-## Learn More
+Cet dernière va ajouter vas pousser vos modifications *Attention ! Si les modifications sont trop conséquentes il se peut que vos données soit perdues !*
 
-To learn more about Next.js, take a look at the following resources:
+Ensuite afin d'avoir un historique des migrations qu'il a été fait sur le schema de la base de donnée : 
+```bash
+npx prisma migrate dev --name little_description
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ce résumé de modification apparaitra alors dans `prisma/migrations/yyyymmddhhmmss_little_description/migration.sql`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Node-red
 
-## Deploy on Vercel
+Pour modifier il vous suffit d'étider les blocs existants ou rajouter de nouveaux liens, et ensuite de simplement appuyé sur `Deploy` pour que les modifications soient prisent en compte dans votre fichier `flow.json`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Site web
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Tout ce qui concerne le site client-side et server-side se trouve dans `src/`
+
+- Dans `src/decorators` : Se trouve un unique fichier `auth.js` qui va permettre de vérifier la présence du token pour les accès à certaines fonctionnalités du site.
+- Dans `src/hooks` : Se trouve un unique fichier `auth.js` qui lui permet de renseigner à l'ensemble du projet l'utilisateur connecté. Il y a une protection de loading également pour signaler quand l'opération server-side est terminée. 
+- Dans `src/components` : Se trouve tous les composants utilisé dans les 4 pages du sites ;
+  - `AddSensorModal.js` Inclus dans la page de profile. Cela implémente un bouton modal, donc qui ouvre une pop-up pour l'ajout d'un nouveau capteur.
+  - `DelSensorModal.js` Malheureusement non fonctionnel. Cela implémente un bouton modal, donc qui ouvre une pop-up pour la suppression d'un capteur du tableau.
+  - `Footer.js` Inclus dans toutes les pages. Permet la description du pied de page du site
+  - `Header.js` Inclus dans toutes les pages. Représente la barre de navigation
+  - `Hero.js` Inclus dans la page d'accueil. Est l'introduction présentant le projet
+  - `Layout.js` Inclus dans toutes les pages. Permet d'englober dans un ensemble commun la description d'une page. Car on ne peut pas retourner plusieurs balises, mais une seuls englobant le tout.
+  - `Notifs.js` Inclus dans le profile. Affiche l'état des notifications mails pour l'utilisateurs courant, et offre la possibilité de les activées ou non avec un bouton.
+  - `Sensor.js` Inclus dans la page d'accueil. Description des capteurs utilisé.
+  - `SensorTable.js` Inclus dans le profile. Retourne l'état courant des relevés des capteurs, si il en possède, de l'utilisateur connecté.
+  - `Service.js` Inclus dans la page d'accueil. Description des services proposé dans ce projet.
+- Dans `pages/`
+  - `api/`  Implémente toutes les requêtes sql (via Prisma).
+  - `index.js` Page d'accueil
+  - `login.js` Page de login
+  - `profile.js` Page du profile
+  - `signup.js` Page de création de compte
