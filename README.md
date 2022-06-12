@@ -1,5 +1,5 @@
 # Projet CSE 2022
-Auteurs : Da Rocha Carvalho Bruno, Merci Lucas, Pruvot Lucas
+Auteurs : Da Rocha Carvalho Bruno, Mercier Lucas, Pruvot Lucien
 
 ## Préparation
 
