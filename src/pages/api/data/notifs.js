@@ -6,13 +6,13 @@ import { JwtAuthGuard } from "../../../decorators/auth";
 const prisma = new PrismaClient();
 
 @JwtAuthGuard()
-class SensorHandler {
+class NotifsHandler {
   @Get()
-  async getSensor(@Request() req) {
+  async getNotifs(@Request() req) {
 
-    const sensors = await prisma.sensor.findMany({
+    const sensors = await prisma.user.findMany({
       where: {
-        ownerId: req.user.sub,
+        id: req.user.sub,
       },
     });
     console.log(sensors);
@@ -20,18 +20,14 @@ class SensorHandler {
   }
 
   @Post()
-  async addSensor(@Body() body) {
+  async updateNotifs(@Body() body) {
 
     const newSensor = await prisma.user.update({
       where: {
         id: body.ownerId
       },
       data:{
-        sensors:{
-          create: {
-            dev_id: body.dev_id
-          },
-        },
+        notifs: body.notif,
       },
     });
     return newSensor;
@@ -39,4 +35,4 @@ class SensorHandler {
 
 }
 
-export default createHandler(SensorHandler);
+export default createHandler(NotifsHandler);

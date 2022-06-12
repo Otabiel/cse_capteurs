@@ -6,14 +6,13 @@ import { Container, Row, Col } from "react-bootstrap";
 import SensorTable from "../components/SensorTable";
 import AddSensor from "../components/AddSensorModal";
 import DelSensor from "../components/DelSensorModal";
-
+import Notifs from "../components/Notifs";
 import Footer from "../components/Footer";
 
 
 const Sensors = () => {
   const { session, loading } = useSession();
 
-  console.log(session);
 
   if (loading) return <p>Loading...</p>
 
@@ -28,12 +27,13 @@ const Sensors = () => {
         <h2 className="mb-4 font-weight-normal line-height-1_4">Mes Capteurs</h2>
 
         <SensorTable/>
-        <Container>
+        <Container className="mb-4">
           <Row>
             <AddSensor/>
-            <DelSensor/>
           </Row>
         </Container>
+
+        <Notifs/>
 
       </Container>
       <Footer/>

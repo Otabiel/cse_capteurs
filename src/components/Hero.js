@@ -14,9 +14,9 @@ const Hero = () => {
             <div className="pr-lg-5">
               <p className="text-uppercase text-success font-weight-medium f-14 mb-4">Club Capteurs</p>
               <h1 className="mb-4 font-weight-normal line-height-1_4">La santé de vos plantes</h1>
-              <p className="text-muted mb-4 pb-2">Club Capteurs est une solution qui permet d&#39;indiquer à un agriculteur, de manière sans fil, l&#39;état de santé de ces plantes. Cela permettra de reprendre les engrets dans une période saine pour les plantes.
-              Pour cela nous avons mis a disposition dans notre boitiers autonome en énergie, différents capteurs permettant d&#39;analyser les taux de différents gazs, l&#39;humidité, la température ainsi que le taux de certains sels telle que le
-              nitrate ou le potassium présent dans la terre.</p>
+              <p className="text-muted mb-4 pb-2">Club Capteurs est une solution simple et rapide permettant d&#39;indiquer à n&#39;importe qui l&#39;état de santé de ses plantes. Et ce, sans-fil, dans un rayon de plusieurs kilomètres !
+              Nous mettons à votre disposition un système tout-en-un, compact, dans un boîtier géolocalisé et autonome en énergie, rechargé grâce à l&#39;énergie solaire.
+              Le système est composé de différents capteurs, mesurant la qualité et la température de lair, ainsi que les différents nutriments et qualité du sol, tels que le nitrate, le potassium, la salinité et la température.</p>
             </div>
           </Col>
           <Col lg={6}>

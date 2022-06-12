@@ -57,8 +57,8 @@ return (
         <Row className="justify-content-center">
           <Col lg={6} md={8}>
             <div className="title text-center mb-5">
-              <h3 className="font-weight-normal text-dark"><span className="text-success">Capteurs</span></h3>
-              <p className="text-muted">Ci-dessous vous retrouverez les différents capteurs présent dans notre boitiers, ainsi que les données qu&#39;ils permettent de mesurer</p>
+              <h3 className="font-weight-normal text-dark"><span className="text-success">CAPTEURS</span></h3>
+              <p className="text-muted">Ci-dessous, retrouvez les différents capteurs présents dans notre système :</p>
             </div>
           </Col>
         </Row>
@@ -66,7 +66,7 @@ return (
         <Row className={"align-items-center mt-5"}>
           <Col md={5} >
             <div>
-
+              <img src="/npk.png" alt="" className="img-fluid mx-auto d-block"/>
             </div>
           </Col>
             <Col md={{size:6, offset:1}}>
@@ -75,7 +75,7 @@ return (
                   <i className="mdi mdi-account-group"></i>
                 </div>
                 <h5 className="text-dark font-weight-normal mb-3 pt-3">Capteur NPK</h5>
-                <p className="text-muted mb-3 f-15">Ce capteur immergé dans la terre, permet de retourner: la température du sol, son l&#39;humidité, son taux d&#39;acidité, sa salinité, sa conductivité, le taux de nitrate, le taux de phosphore ainsi que le taux de potassium.</p>
+                <p className="text-muted mb-3 f-15">Ce capteur, une fois planté dans le sol, mesure : La température et l&#39;humidité du sol, son taux d&#39;acidité,de nitrate, de phosphore de potassium et sa salinité.</p>
               </div>
             </Col>
         </Row>
@@ -86,13 +86,13 @@ return (
               <div className="my-4">
                 <i className="mdi mdi-account-group"></i>
               </div>
-              <h5 className="text-dark font-weight-normal mb-3 pt-3">Capteur Co2</h5>
-              <p className="text-muted mb-3 f-15">Ce capteur permet de retourner les taux de gaz présent. Il mesure le taux de dioxyde d&#39;azote(No2), le taux de dioxyde de carbone, le taux d&#39;alcool et le taux de composé organique volatile.</p>
+              <h5 className="text-dark font-weight-normal mb-3 pt-3">Capteur Multi-Gaz</h5>
+              <p className="text-muted mb-3 f-15">Ce capteur, à l&#39;air libre, mesure les taux des gazs présents dans l&#39;air : Le taux de dioxygène d&#39;azone(NO2), le taux de dioxyde de carbone (CO2), le taux d&#39;alcool (AlCo) et le taux de composé organique volatile</p>
             </div>
           </Col>
           <Col md={{size:5, offset:1}} className="mt-5 mt-sm-0">
             <div>
-
+              <img src="/multi_gaz.png" alt="" className="img-fluid mx-auto d-block"/>
             </div>
           </Col>
         </Row>
@@ -100,7 +100,7 @@ return (
         <Row className={"align-items-center mt-5"}>
           <Col md={5} >
             <div>
-
+              <img src="/temp_hum.png" alt="" className="img-fluid mx-auto d-block"/>
             </div>
           </Col>
             <Col md={{size:6, offset:1}}>
@@ -109,7 +109,7 @@ return (
                   <i className="mdi mdi-account-group"></i>
                 </div>
                 <h5 className="text-dark font-weight-normal mb-3 pt-3">Capteur Température-Humidité</h5>
-                <p className="text-muted mb-3 f-15">Ce capteur complétement étanche va pouvoir vous retourner l&#39;humidité ainsi que la température extérieur</p>
+                <p className="text-muted mb-3 f-15">Ce capteur, à l&#39;air libre, mesure avec une grande précision la température et l&#39;humidité de l&#39;air extérieur.</p>
               </div>
             </Col>
         </Row>
@@ -120,15 +120,32 @@ return (
               <div className="my-4">
                 <i className="mdi mdi-account-group"></i>
               </div>
-              <h5 className="text-dark font-weight-normal mb-3 pt-3">Récepteur GPS</h5>
-              <p className="text-muted mb-3 f-15">Pour connaître la position exact de vos capteurs dans vos champs, et pouvoir de ce fait mieux comprendre les zones à problèmes</p>
+              <h5 className="text-dark font-weight-normal mb-3 pt-3">GPS</h5>
+              <p className="text-muted mb-3 f-15">Afin de déterminer la position exacte de nos capteurs, ils sont équipés d&#39;un émetteur GPS,avec une précision de 1 à 10m</p>
             </div>
           </Col>
           <Col md={{size:5, offset:1}} className="mt-5 mt-sm-0">
             <div>
-
+              <img src="/gps.png" alt="" className="img-fluid mx-auto d-block"/>
             </div>
           </Col>
+        </Row>
+
+        <Row className={"align-items-center mt-5"}>
+          <Col md={5} >
+            <div>
+              <img src="/lora.png" alt="" className="img-fluid mx-auto d-block"/>
+            </div>
+          </Col>
+            <Col md={{size:6, offset:1}}>
+              <div className="mt-5 mt-sm-0 mb-4">
+                <div className="my-4">
+                  <i className="mdi mdi-account-group"></i>
+                </div>
+                <h5 className="text-dark font-weight-normal mb-3 pt-3">LoRa</h5>
+                <p className="text-muted mb-3 f-15">Les mesures sont transférées à l&#39;utilisateur grâce au réseau basse-consommation  	&#34;LoRa 	&#34; disponible partout dans le monde, n&#39;engendrant aucun frais supplémentaire.</p>
+              </div>
+            </Col>
         </Row>
 
       </Container>
