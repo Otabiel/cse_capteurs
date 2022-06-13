@@ -21,7 +21,7 @@ DATABASE_URL="postgres://user:password@host:port/db_name"
 SHADOW_DATABASE_URL="postgres://user:password@host:port/db_name"
 ```
 
-Dans ce même fichier il faut également mettre votre clé d'encryption pour les tokens json utilisé dans ce projet. Vous pouvez garder la même ou mettre n'importe quel autre clé vous allant.
+Dans ce même fichier il faut également mettre votre clé d'encryption pour les tokens json utilisé dans ce projet. 
 
 ### Node-Red
 
