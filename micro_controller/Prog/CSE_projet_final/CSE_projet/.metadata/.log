@@ -1,0 +1,32 @@
+!SESSION 2022-05-30 19:47:51.688 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_CH
+Framework arguments:  C:\Users\Lucas\OneDrive\Documents_Laptop\HEIG\SEM6\CSE\CSE-Projet-Capteurs\CSE_projet_final\CSE_projet\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data C:\Users\Lucas\OneDrive\Documents_Laptop\HEIG\SEM6\CSE\CSE-Projet-Capteurs\CSE_projet_final\CSE_projet C:\Users\Lucas\OneDrive\Documents_Laptop\HEIG\SEM6\CSE\CSE-Projet-Capteurs\CSE_projet_final\CSE_projet\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-05-30 19:47:56.491
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-05-30 19:47:56.542
+!MESSAGE Log4j initialized with config file C:\Users\Lucas\OneDrive\Documents_Laptop\HEIG\SEM6\CSE\CSE-Projet-Capteurs\CSE_projet_final\CSE_projet\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-05-30 19:47:59.802
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-05-30 19:50:48.857 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_CH
+Framework arguments:  C:\Users\Lucas\OneDrive\Documents_Laptop\HEIG\SEM6\CSE\CSE-Projet-Capteurs\CSE_projet_final\CSE_projet\.cproject
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\Lucas\OneDrive\Documents_Laptop\HEIG\SEM6\CSE\CSE-Projet-Capteurs\CSE_projet_final\CSE_projet\.cproject
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-05-30 19:50:54.614
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-05-30 19:50:54.666
+!MESSAGE Log4j initialized with config file C:\Users\Lucas\OneDrive\Documents_Laptop\HEIG\SEM6\CSE\CSE-Projet-Capteurs\CSE_projet_final\CSE_projet\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-05-30 19:50:57.941
+!MESSAGE Started RMI Server, listening on port 41337
